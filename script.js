@@ -18,3 +18,25 @@ while(listaSpesa[x] != undefined){
     x++;
 }
 console.log("----Fine lista----");
+
+
+//Quando le stampe in console sono corrette, stampare gli elementi 
+//in un elenco puntato in HTML, utilizzando uno dei due cicli scritti al punto precedente.
+
+let id_listaSpesa = document.getElementById("listaSpesa");
+
+
+for(let i = 0; i < listaSpesa.length; i++){
+    let node = document.createElement("li");
+    node.appendChild(document.createTextNode(listaSpesa[i]));
+    id_listaSpesa.appendChild(node);
+}
+
+function addNode(){
+    let valore_newnode = document.getElementById("new_node").value;
+    console.log(valore_newnode);
+    let node = document.createElement("li");
+    node.appendChild(document.createTextNode(valore_newnode));
+    id_listaSpesa.appendChild(node);
+    document.getElementById("new_node").value = "";
+}
